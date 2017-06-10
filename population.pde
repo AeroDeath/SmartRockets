@@ -38,7 +38,7 @@ class Population{
     float sum = 0;
     for(int i = 0; i<popSize;i++){
       this.fitness[i] = this.individuals[i].fitness(target);
-      sum += fitness[i];
+      sum += this.fitness[i];
       this.selectionArray[i] = sum;
     }
     for(int i=0; i<popSize;i++){
@@ -49,7 +49,7 @@ class Population{
   
   void calcElite(){
     for(int i =0; i<popSize;i++){
-      this.elitists.set(str(i),fitness[i]);
+      this.elitists.set(str(i),this.fitness[i]);
     }
     this.elitists.sortValuesReverse();
     println(this.elitists);

@@ -5,11 +5,10 @@ float crossoverRate = 0.6;
 float randomRate = 0.3;
 float elitism = 0.1;
 int lifespan = 600;
-int popSize = 100;
+int popSize = 1000;
 float force_scale = 0.3;
 int age = 0;
 int generation = 0;
-Rocket Rock = new Rocket();
 Population armada = new Population();
 Obstacle[] obstacles = new Obstacle[1];
 
@@ -34,7 +33,7 @@ void draw(){
   age = age + 1;
   if(age == lifespan){
     armada.calcFitness(target);
-    armada.calcElite();
+    armada.calcElite(); //<>//
     println(armada.selectionArray);
     armada.reproduce();
     age = 0;

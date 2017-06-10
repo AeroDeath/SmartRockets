@@ -21,12 +21,12 @@ class Rocket{
   }
   
   void update(){
-    if(age == lifespan){
-      age = 0;
+    if(this.age == lifespan){
+      this.age = 0;
     }
     if(this.alive){
-      this.impulse(this.dna.genes[age]);
-      age++;
+      this.impulse(this.dna.genes[this.age]);
+      this.age++;
     }
     else{
       this.vel.mult(0);
@@ -64,13 +64,13 @@ class Rocket{
   
   float fitness(Target target){
     if (this.alive){
-      return lifespan - age + (1/pow(this.pos.dist(target.loc),2));
+      return lifespan - this.age + (1/pow(this.pos.dist(target.loc),2));
     }
     else if(this.isDestroyed){
       return ((1/pow(this.pos.dist(target.loc),2)))*0.1;
     }
     else{
-      return lifespan - age;
+      return lifespan - this.age;
     }
   }
   

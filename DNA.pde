@@ -1,5 +1,5 @@
 class DNA{
-  PVector[] genes = new PVector[lifespan+1];
+  PVector[] genes = new PVector[lifespan];
   
   void init(){
     for(int i =0; i<this.genes.length; i++){
